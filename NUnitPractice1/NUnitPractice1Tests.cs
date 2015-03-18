@@ -56,15 +56,28 @@ namespace Bank
             Account source = new Account();
             source.Deposit(200m);
 
-            // Step 2 - Act
             Account destination = new Account();
             destination.Deposit(150m);
 
+            // Step 2 - Act
             source.TransferFunds(destination, 100m);
 
             // Step 3 - Assert  
             Assert.AreEqual(250m, destination.Balance);
             Assert.AreEqual(100m, source.Balance);
+        }
+
+        [Test]
+        [ExpectedException(typeof(InsufficientFundsException))]
+        public void TransferWithInsufficientFunds()
+        {
+            Account source = new Account();
+            source.Deposit(200m);
+
+            Account destination = new Account();
+            destination.Deposit(150m);
+
+            source.TransferFunds(destination, 300m);
         }
     }
 }

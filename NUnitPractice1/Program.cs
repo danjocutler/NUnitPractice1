@@ -15,6 +15,7 @@ namespace Bank
         }
 
         private decimal balance;
+        private decimal minimumBalance = 10m;
 
         public void Deposit(decimal amount)
         {
@@ -29,6 +30,9 @@ namespace Bank
         public void TransferFunds(Account destination, decimal amount)
         {
             destination.Deposit(amount);
+
+            if (balance - amount < minimumBalance)
+                throw new InsufficientFundsException();
             Withdraw(amount);
         }
 
@@ -36,5 +40,14 @@ namespace Bank
         {
             get { return balance;  }
         }
+
+        public decimal MinimumBalance
+        {
+            get { return minimumBalance; }
+        }
+    }
+
+    public class InsufficientFundsException : ApplicationException
+    { 
     }
 }
