@@ -1,0 +1,9 @@
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\bin\Debug\NUnitPractice1.exe.config
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\obj\Debug\NUnitPractice1.csprojResolveAssemblyReference.cache
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\bin\Debug\NUnitPractice1.exe
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\bin\Debug\NUnitPractice1.pdb
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\obj\Debug\NUnitPractice1.exe
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\obj\Debug\NUnitPractice1.pdb
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\bin\Debug\nunit.framework.dll
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\bin\Debug\nunit.mocks.dll
+c:\users\dan\documents\visual studio 2013\Projects\NUnitPractice1\NUnitPractice1\bin\Debug\nunit.framework.xml
