@@ -33,6 +33,7 @@ namespace Bank
 
             if (balance - amount < minimumBalance)
                 throw new InsufficientFundsException();
+
             Withdraw(amount);
         }
 

@@ -12,6 +12,9 @@ namespace Bank
     [TestFixture]
     public class AccountTest
     {
+        Account source;
+        Account destination;
+
         #region Setup and Tear down
         /// <summary>
         /// This runs only once at the beginning of all tests and is used for all tests in the 
@@ -36,8 +39,13 @@ namespace Bank
         /// This setup funcitons runs before each test method
         /// </summary>
         [SetUp]
-        public void SetupForEachTest()
+        public void Init()
         {
+            source = new Account();
+            source.Deposit(200m);
+
+            destination = new Account();
+            destination.Deposit(150m);
         }
 
         /// <summary>
@@ -53,12 +61,8 @@ namespace Bank
         public void TransferFunds()
         {
             // Step 1 - Arrange
-            Account source = new Account();
-            source.Deposit(200m);
-
-            Account destination = new Account();
-            destination.Deposit(150m);
-
+            //(Now in [Setup])
+            
             // Step 2 - Act
             source.TransferFunds(destination, 100m);
 
@@ -71,13 +75,24 @@ namespace Bank
         [ExpectedException(typeof(InsufficientFundsException))]
         public void TransferWithInsufficientFunds()
         {
-            Account source = new Account();
-            source.Deposit(200m);
-
-            Account destination = new Account();
-            destination.Deposit(150m);
-
             source.TransferFunds(destination, 300m);
+        }
+
+        [Test]
+        [Ignore("Decide how to implement transaction management")]
+        public void TransferWithInsufficientFundsAtomicity()
+        { 
+
+            try
+            {
+                source.TransferFunds(destination, 300m);
+            }
+            catch (InsufficientFundsException expected)
+            { 
+            }
+
+            Assert.AreEqual(200m, source.Balance);
+            Assert.AreEqual(150m, destination.Balance);
         }
     }
 }
